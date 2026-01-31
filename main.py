@@ -1,6 +1,10 @@
-from fastapi import FastAPI, HTTPException, Path, Query, Body, Depends
+from fastapi import FastAPI, Path, Query, Body, Depends, HTTPException
 from typing import List
+from http import HTTPException
 from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
+from sqlalchemy.sql import sessionmaker
+from sqlalchemy.sql import QueuePool
 
 from models import Base, User, Game
 from database import engine, session_local
